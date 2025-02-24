@@ -103,17 +103,63 @@ def filter_anomalies_by_date(period='daily'):
 st.set_page_config(page_title="Pipeline Leak Detection", layout="wide")
 st.markdown("""
     <style>
-        .main {background-color: #f5f5f5;}
-        h1 {color: #2c3e50; text-align: center; font-size: 2.5rem; font-family: 'Arial', sans-serif;}
-        .stButton>button {background-color: #3498db; color: white; border-radius: 10px; padding: 10px;}
-        .stCheckbox>div>label {font-size: 16px; color: #34495e; font-family: 'Arial', sans-serif;}
-        .stDataFrame {width: 100%;}
-        .map-container {height: 400px; width: 100%;}
-        .stBlockquote {font-size: 1.1em; font-style: italic;}
-        .stSidebar {background-color: #ecf0f1; padding: 15px;}
-        .stSidebar .sidebar-content {margin-top: 50px;}
+        /* Change main background color */
+        .main {
+            background-color: #f5f5f5;
+        }
+
+        /* Style the sidebar */
+        section[data-testid="stSidebar"] {
+            background-color: #3a3a3a; /* Lighter black shade */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Sidebar text color */
+        section[data-testid="stSidebar"] * {
+            color: white; 
+        }
+
+        /* Buttons inside sidebar */
+        section[data-testid="stSidebar"] .stButton>button {
+            background-color: #4a4a4a; /* Slightly lighter gray */
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+        }
+
+        /* Improve checkbox styles */
+        section[data-testid="stSidebar"] .stCheckbox>div>label {
+            font-size: 16px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Improve overall UI */
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 2.5rem;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .stDataFrame {
+            width: 100%;
+        }
+
+        .map-container {
+            height: 400px;
+            width: 100%;
+        }
+
+        .stBlockquote {
+            font-size: 1.1em;
+            font-style: italic;
+        }
     </style>
 """, unsafe_allow_html=True)
+
 
 # Project Overview Section
 st.markdown("""
