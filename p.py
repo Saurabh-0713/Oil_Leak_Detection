@@ -56,7 +56,7 @@ def generate_sensor_data():
 def detect_leak(df):
     required_columns = ['pressure', 'flow', 'acoustic']
     if not all(col in df.columns for col in required_columns):
-        st.error("Missing necessary columns in the sensor data.")
+        st.error("Wait for initialization of pipeline")
         return pd.DataFrame()  # Return empty DataFrame if necessary columns are missing
 
     df[['pressure_z', 'flow_z', 'acoustic_z']] = scaler.transform(df[['pressure', 'flow', 'acoustic']])
